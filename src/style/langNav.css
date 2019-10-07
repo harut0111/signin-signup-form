@@ -1,0 +1,11 @@
+.langNav span {
+    border: 1px solid blue;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.langNav span:hover {
+    background: green;
+    color: white;
+}

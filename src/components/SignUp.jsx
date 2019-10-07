@@ -3,31 +3,37 @@ import React from 'react';
 import Header from './Header';
 import SubmitBtn from './SubmitBtn';
 import SwitchBtn from './SwitchBtn';
+import { useTranslation } from 'react-i18next';
+
 
 const SignUp = () => {
+
+    const { t } = useTranslation();
+
     return (
         <div className="singnupCmpt">
-            <Header value={"Sign Up"} />
+            <Header value={t("Sign Up")} />
             <form>
                 <input 
                     type="email" 
                     required
-                    placeholder='Enter your email' />
+                    placeholder={t('Enter your email')} />
                 <input 
                     type="password" 
                     required
-                    placeholder='Enter your password' />
+                    placeholder={t('Enter your password')} />
                 <input 
                     type="password" 
                     required
-                    placeholder='Confirm password' />
+                    placeholder={t('Confirm password')} />
                 <input 
                     type="text" 
                     required
-                    placeholder='Enter Your Name' />
+                    placeholder={t('Enter Your Name')} />
 
-                <SubmitBtn value={"Sign Up"} />
-                <SwitchBtn value={"Sign In"} />
+                <SubmitBtn value={t("Sign Up")} />
+                <p>{t("Already Registered?")}</p>
+                <SwitchBtn value={t("Sign In")} />
             </form>
 
         </div>

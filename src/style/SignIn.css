@@ -5,3 +5,7 @@
 .signinCmpt input {
     display: block;
 }
+
+.signinCmpt p {
+    text-align: center;
+}
