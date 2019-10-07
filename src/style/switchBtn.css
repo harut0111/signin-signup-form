@@ -1,0 +1,9 @@
+.switchBtn > input {
+    background: none;
+    border: none;
+    width: 160px;
+    background: blue;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+}
