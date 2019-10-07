@@ -1,3 +1,7 @@
+.langNav {
+    text-align: initial;
+}
+
 .langNav span {
     border: 1px solid blue;
     padding: 5px;

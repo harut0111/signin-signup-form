@@ -1,6 +1,6 @@
 .mainCmpt {
   position: absolute;
-  width: fit-content;
+  width: 333px;
   border: 1px dotted blue;
   top: 50%;
   left: 50%;
