@@ -4,33 +4,35 @@ import Header from './Header';
 import SubmitBtn from './SubmitBtn';
 import SwitchBtn from './SwitchBtn';
 import { connect } from "react-redux";
+import { useTranslation } from 'react-i18next';
 
 const SignIn = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const { t } = useTranslation();
+
     return(
         <div className="signinCmpt">
-            <Header value={'Sign In'} />
+            <Header value={t('Sign In')} />
             <form>
-                <label>
-                    Email:
-                    <input 
-                        type='email' 
-                        required 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}/>
-                    Password:
-                    <input 
-                        type='password' 
-                        required 
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)} />
-                </label>
-                <SubmitBtn value={"Sign In"} />
-                <p>Don't have account yet?</p>
-                <SwitchBtn value={"Sign Up"} />
+                <input 
+                    type='email' 
+                    required 
+                    placeholder={t("E-mail")}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}/>
+                <input 
+                    type='password' 
+                    required 
+                    placeholder={t("Password")}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)} />
+
+                <SubmitBtn value={t("Sign In")} />
+                <p>{t("Don't have account yet?")}</p>
+                <SwitchBtn value={t("Sign Up")} />
             </form>
         </div>
     )

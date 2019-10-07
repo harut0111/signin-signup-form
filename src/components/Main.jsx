@@ -8,7 +8,7 @@ function Main(props) {
 
     return(
         <div className="mainCmpt">
-           { props.registre ? <SignIn />:<SignUp /> }
+           { props.registre ? <SignUp />:<SignIn /> }
         </div>
     )
 }

@@ -5,3 +5,8 @@
 .singnupCmpt input {
     display: block;
 }
+
+.singnupCmpt p {
+    text-align: center;
+}
+

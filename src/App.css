@@ -9,11 +9,9 @@
 
 h1 {
   text-align: center;
-  background: green;
-  color: white;
 }
 
 input {
-    padding: 5px;
+    padding: 10px;
     margin: 0px auto 10px;
 }
