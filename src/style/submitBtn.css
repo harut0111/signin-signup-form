@@ -1,0 +1,9 @@
+.submitBtn > input {
+    width: 160px;
+    background: none;
+    background: green;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 18px;
+}

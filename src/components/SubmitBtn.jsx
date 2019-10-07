@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/submitBtn.css';
 
 const SubmitBtn = (props) => {
     return (

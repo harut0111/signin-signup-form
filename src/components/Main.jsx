@@ -1,14 +1,22 @@
-import React, {useState} from 'react';
+import '../style/main.css'; 
+import React from 'react';
 import SignIn from './SignIn';
-import '../style/Main.css';
+import SignUp from './SignUp';
+import { connect } from 'react-redux';
 
-export default function Main() {
+function Main(props) {
 
-    // const [registre, setRegistre] = useState(false);
-    
     return(
         <div className="mainCmpt">
-            <SignIn signUpHand={handleOnSignUpClick}/>
+           { props.registre ? <SignIn />:<SignUp /> }
         </div>
     )
 }
+
+const mapStateToProps = (state) => {
+    return {
+        registre: state.registre,
+    }
+}
+
+export default connect(mapStateToProps)(Main);
