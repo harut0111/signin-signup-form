@@ -1,17 +1,20 @@
-import { SWITCH, SIGNIN_ASYNC, SIGNUP_ASYNC } from '../constants/index';
+import { SWITCH, SIGNIN_ASYNC, SIGNUP_ASYNC, SIGNOUT } from '../constants/index';
 
 
 const switchCmpt = () => {
     return { type: SWITCH }
 }
 
-const signIn = (isSignin) => {
-    return { type: SIGNIN_ASYNC, payload: isSignin }
+const signIn = () => {
+    return { type: SIGNIN_ASYNC }
 }
 
-const signUp = (isSignup) => {
-    console.log(isSignup);
-    return { type: SIGNUP_ASYNC, payload: isSignup }
+const signUp = () => {
+    return { type: SIGNUP_ASYNC }
 }
 
-export { switchCmpt, signIn, signUp };
+const signOut = () => {
+    return { type: SIGNOUT }
+}
+
+export { switchCmpt, signIn, signUp, signOut };

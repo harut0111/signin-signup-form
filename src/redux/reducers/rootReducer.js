@@ -1,4 +1,4 @@
-import { SWITCH, SIGNIN, SIGNUP } from '../constants/index'; 
+import { SWITCH, SIGNIN, SIGNUP, SIGNOUT } from '../constants/index'; 
 
 const initialState = {
     toggle: false,
@@ -15,11 +15,16 @@ const rootReducer = (state = initialState, action) => {
             })
         case SIGNIN: 
             return Object.assign({}, state, {
-                signIn: action.payload
+                signIn: true,
             })
         case SIGNUP:
             return Object.assign({}, state, {
-                signUp: action.payload
+                signUp: true,
+            })
+        case SIGNOUT:
+            return Object.assign({}, state, {
+                signIn: false,
+                signUp: false,
             })
         default:
             return state;

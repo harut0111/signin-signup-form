@@ -13,7 +13,7 @@ const SignUp = (props) => {
 
     const signupSubmitHandler = (e) => {
         e.preventDefault();
-        props.signUp(true);
+        props.signUp();
     }
 
     return (

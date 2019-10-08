@@ -15,7 +15,7 @@ const SignIn = (props) => {
 
     const signinSubmitHandler = (e) => {
         e.preventDefault();
-        props.signIn(true);
+        props.signIn();
     }
 
     return(

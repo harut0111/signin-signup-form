@@ -1,30 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signIn, signUp } from '../redux/actions/index';
+import { signOut } from '../redux/actions/index';
 
 const Welcome = (props) => {
 
-    const {value, signIn} = props;
-
-    const onClickHandler = () => {
-        signUp(false);
-        signIn(false);
-    }
+    const {value, signOut} = props;
 
     return (
         <div className='welcome'>
             <nav>
-                <button onClick={onClickHandler}>Sign Out</button>
+                <button onClick={signOut}>Sign Out</button>
             </nav>
-            <h1>Welcome! you have {value} successfully.</h1>
+            <h3>Welcome!</h3>
+            <h3>you have <span style={{color: 'red'}}>{value}</span> successfully.</h3>
         </div>
     )
 }
 
-const mapDispatchToProps = {
-    signUp,
-    signIn, 
-   
-}
 
-export default connect(null, mapDispatchToProps)(Welcome);
+export default connect(null, { signOut })(Welcome);
