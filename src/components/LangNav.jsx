@@ -11,10 +11,11 @@ const langNav = () => {
 
     return(
         <div className="langNav">
-            <nav>
-                <span onClick={()=>handleClick('en')}> English </span>
+             <span onClick={()=>handleClick('en')}> English </span>
                 <span onClick={()=>handleClick('arb')}> العربية </span>
                 <span onClick={()=>handleClick('arm')}> Հայերեն </span>
+            <nav>
+               
             </nav>
         </div>
     )

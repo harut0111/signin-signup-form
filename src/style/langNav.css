@@ -1,11 +1,12 @@
 .langNav {
-    text-align: initial;
+    text-align: left;
+    height: 50px;
 }
 
 .langNav span {
-    border: 1px solid blue;
-    padding: 5px;
-    border-radius: 5px;
+    border-bottom: 2px solid green;
+    padding: 2px;
+    /* border-radius: 2px; */
     margin: 5px;
     cursor: pointer;
 }

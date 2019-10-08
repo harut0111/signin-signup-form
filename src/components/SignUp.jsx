@@ -2,17 +2,24 @@ import React from 'react';
 import Header from './Header';
 import SubmitBtn from './SubmitBtn';
 import SwitchBtn from './SwitchBtn';
+import { connect } from "react-redux";
 import { useTranslation } from 'react-i18next';
+import { signUp } from '../redux/actions/index';
 
 
-const SignUp = () => {
+const SignUp = (props) => {
 
     const { t } = useTranslation();
+
+    const signupSubmitHandler = (e) => {
+        e.preventDefault();
+        props.signUp();
+    }
 
     return (
         <div className="singnupCmpt">
             <Header value={t("Sign Up")} />
-            <form>
+            <form onSubmit={signupSubmitHandler}>
                 <input 
                     type="email" 
                     required
@@ -39,4 +46,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp;
+export default connect(null, { signUp })(SignUp);

@@ -8,9 +8,14 @@
     "Enter your password": "Մուտքագրեք ձեր գաղտնաբառը",
     "Confirm password": "Հաստատել գաղտնաբառը",
     "Enter Your Name": "Մուտքագրեք ձեր անունը",
-    "Already Registered?": "Արդեն գրանցվե՞լ եք:"
+    "Already Registered?": "Արդեն գրանցվե՞լ եք:",
+    "Sign Out": "Դուրս գալ",
+    "Welcome!": "Բարի գալուստ",
+    "you have": "դուք",
+    "signed in": "մուտք եք գործել ",
+    "signed up": "գրանցվել եք",
+    "successfully": "հաջողությամբ"
 }
-
 
 
 
