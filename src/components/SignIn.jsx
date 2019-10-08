@@ -4,18 +4,24 @@ import SubmitBtn from './SubmitBtn';
 import SwitchBtn from './SwitchBtn';
 import { connect } from "react-redux";
 import { useTranslation } from 'react-i18next';
+import { signIn } from '../redux/actions/index';
 
-const SignIn = () => {
+const SignIn = (props) => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const { t } = useTranslation();
 
+    const signinSubmitHandler = (e) => {
+        e.preventDefault();
+        props.signIn(true);
+    }
+
     return(
         <div className="signinCmpt">
             <Header value={t('Sign In')} />
-            <form>
+            <form onSubmit={signinSubmitHandler}>
                 <input 
                     type='email' 
                     required 
@@ -37,10 +43,4 @@ const SignIn = () => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        registre: state.registre,
-    }
-}
-
-export default connect(mapStateToProps)(SignIn);
+export default connect(null, { signIn })(SignIn);
