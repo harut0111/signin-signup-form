@@ -14,5 +14,7 @@
     "you have": "you have",
     "signed in": "signed in",
     "signed up": "signed up",
-    "successfully": "successfully"
+    "successfully": "successfully",
+    "Must contain at least 6 or more characters": "Must contain at least 6 or more characters",
+    "Passwords Don't Match": "Passwords Don't Match"
 }

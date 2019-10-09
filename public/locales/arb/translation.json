@@ -14,7 +14,9 @@
     "you have": "عندك",
     "signed in": "تم الدخول",
     "signed up": "اشترك",
-    "successfully": "بنجاح"
+    "successfully": "بنجاح",
+    "Must contain at least 6 or more characters": "يجب أن يحتوي على 6 أحرف على الأقل",
+    "Passwords Don't Match": "Pكلمات المرور غير متطابقة"
 }
 
 
