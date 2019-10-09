@@ -6,10 +6,17 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 const availableLanguages = ['en', 'arb', 'arm'];
 
-i18n.use(Backend).use(LanguageDetector).use(initReactI18next).init({
+i18n
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
     fallbackLng: 'en',
     debug: false,
     whitelist: availableLanguages,
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json'
+    },
 
     interpolation: {
       escapeValue: false, 
