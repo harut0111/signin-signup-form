@@ -5,10 +5,11 @@ import SignUp from './SignUp';
 import Welcome from './Welcome';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+// import Form  from './Form';
 
 function Main(props) {
 
-    const {signin, signup, toggle } = props;
+    const {signin, signup, toggle, disableForm } = props;
 
     const { t } = useTranslation();
 
@@ -24,7 +25,7 @@ function Main(props) {
     }
 
     return(
-        <div className="mainCmpt">
+        <div className="mainCmpt" style={{opacity: disableForm ? '0.5' : '1'}} >
             { switchComponents(signin, signup, toggle) }
         </div>
     )
@@ -34,7 +35,8 @@ const mapStateToProps = (state) => {
     return {
         toggle: state.toggle,
         signin: state.signIn,
-        signup: state.signUp
+        signup: state.signUp,
+        disableForm: state.disableForm,
     }
 }
 

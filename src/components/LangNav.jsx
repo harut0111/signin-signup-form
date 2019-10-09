@@ -1,5 +1,5 @@
-import React from 'react';
 import "../style/langNav.css";
+import React from 'react';
 import i18next from 'i18next';
 
 

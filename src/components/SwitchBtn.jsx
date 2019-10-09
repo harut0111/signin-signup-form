@@ -1,5 +1,5 @@
-import React from 'react';
 import '../style/switchBtn.css';
+import React from 'react';
 import { switchCmpt } from "../redux/actions/index";
 import { connect } from 'react-redux';
 

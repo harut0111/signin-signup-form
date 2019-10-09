@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './Header';
 import SubmitBtn from './SubmitBtn';
 import SwitchBtn from './SwitchBtn';
@@ -9,41 +9,74 @@ import { signUp } from '../redux/actions/index';
 
 const SignUp = (props) => {
 
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confPassword, setConfPassword] =  useState('');
+    const [name, setName] = useState('');
+    const [errorVis, setErrorVis] = useState(false);
+
     const { t } = useTranslation();
 
     const signupSubmitHandler = (e) => {
         e.preventDefault();
-        props.signUp();
+        if(password !== confPassword) {
+            setErrorVis(true);
+        } else {
+            setErrorVis(false);
+            props.signUp();
+        }
     }
 
     return (
         <div className="singnupCmpt">
             <Header value={t("Sign Up")} />
-            <form onSubmit={signupSubmitHandler}>
-                <input 
-                    type="email" 
-                    required
-                    placeholder={t('Enter your email')} />
-                <input 
-                    type="password" 
-                    required
-                    placeholder={t('Enter your password')} />
-                <input 
-                    type="password" 
-                    required
-                    placeholder={t('Confirm password')} />
-                <input 
-                    type="text" 
-                    required
-                    placeholder={t('Enter Your Name')} />
+            <fieldset disabled={props.disableForm} style={{border: 'none'}}>
+                <form onSubmit={signupSubmitHandler}>
+                    <input 
+                        type="email" 
+                        placeholder={t('Enter your email')}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        autoFocus
+                        required />
+                    <input 
+                        type="password" 
+                        placeholder={t('Enter your password')}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        pattern="(.+?).{5,}" 
+                        title="Must contain at least 6 or more characters" 
+                        required />
+                    <input 
+                        type="password" 
+                        placeholder={t('Confirm password')}
+                        value={confPassword}
+                        onChange={(e) => setConfPassword(e.target.value)}
+                        pattern="(.+?).{5,}" 
+                        title="Must contain at least 6 or more characters" 
+                        required />
+                    <input 
+                        type="text" 
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder={t('Enter Your Name')}
+                        required />
 
-                <SubmitBtn value={t("Sign Up")} />
-                <p>{t("Already Registered?")}</p>
-                <SwitchBtn value={t("Sign In")} />
-            </form>
-
+                    <p style={{color: 'red', margin: '0px', display: errorVis ? 'block': 'none'}}>Passwords Don't Match</p>
+                    
+                    <SubmitBtn value={t("Sign Up")} />
+                    <p>{t("Already Registered?")}</p>
+                    <SwitchBtn value={t("Sign In")} />
+                </form>
+            </fieldset>
         </div>
     )
 }
 
-export default connect(null, { signUp })(SignUp);
+const stateToProps = (state) => {
+    return {
+        disableForm: state.disableForm
+    }
+}
+
+export default connect(stateToProps, { signUp })(SignUp);

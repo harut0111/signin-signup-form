@@ -17,30 +17,42 @@ const SignIn = (props) => {
         e.preventDefault();
         props.signIn();
     }
-
+    
     return(
-        <div className="signinCmpt">
+        <div className="signinCmpt" >
             <Header value={t('Sign In')} />
-            <form onSubmit={signinSubmitHandler}>
-                <input 
-                    type='email' 
-                    required 
-                    placeholder={t("E-mail")}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}/>
-                <input 
-                    type='password' 
-                    required 
-                    placeholder={t("Password")}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)} />
+            <fieldset disabled={props.disableForm} style={{border: 'none'}}>
+                <form onSubmit={signinSubmitHandler} >
+                    <input 
+                        type='email'
+                        placeholder={t("E-mail")}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)} 
+                        autoFocus
+                        required />
+                    <input 
+                        type='password' 
+                        placeholder={t("Password")}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)} 
+                        pattern="(.+?).{5,}" 
+                        title="Must contain at least 6 or more characters" 
+                        required  />
 
-                <SubmitBtn value={t("Sign In")} />
-                <p>{t("Don't have account yet?")}</p>
-                <SwitchBtn value={t("Sign Up")} />
-            </form>
+                    <SubmitBtn value={t("Sign In")} />
+                    <p>{t("Don't have account yet?")}</p>
+                    <SwitchBtn value={t("Sign Up")} />
+                </form>
+            </fieldset>
         </div>
     )
 }
 
-export default connect(null, { signIn })(SignIn);
+const stateToProps = (state) => {
+    return {
+        disableForm: state.disableForm
+    }
+}
+
+
+export default connect(stateToProps, { signIn })(SignIn);
