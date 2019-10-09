@@ -36,7 +36,7 @@ const SignIn = (props) => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)} 
                         pattern="(.+?).{5,}" 
-                        title="Must contain at least 6 or more characters" 
+                        title={t("Must contain at least 6 or more characters")} 
                         required  />
 
                     <SubmitBtn value={t("Sign In")} />

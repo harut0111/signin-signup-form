@@ -45,7 +45,7 @@ const SignUp = (props) => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         pattern="(.+?).{5,}" 
-                        title="Must contain at least 6 or more characters" 
+                        title={t("Must contain at least 6 or more characters")} 
                         required />
                     <input 
                         type="password" 
@@ -53,7 +53,7 @@ const SignUp = (props) => {
                         value={confPassword}
                         onChange={(e) => setConfPassword(e.target.value)}
                         pattern="(.+?).{5,}" 
-                        title="Must contain at least 6 or more characters" 
+                        title={t("Must contain at least 6 or more characters")} 
                         required />
                     <input 
                         type="text" 
@@ -62,7 +62,7 @@ const SignUp = (props) => {
                         placeholder={t('Enter Your Name')}
                         required />
 
-                    <p style={{color: 'red', margin: '0px', display: errorVis ? 'block': 'none'}}>Passwords Don't Match</p>
+                    <p style={{color: 'red', margin: '0px', display: errorVis ? 'block': 'none'}}>{t("Passwords Don't Match")}</p>
                     
                     <SubmitBtn value={t("Sign Up")} />
                     <p>{t("Already Registered?")}</p>
