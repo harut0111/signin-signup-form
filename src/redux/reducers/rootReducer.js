@@ -1,9 +1,10 @@
-import { SWITCH, SIGNIN, SIGNUP, SIGNOUT } from '../constants/index'; 
+import { SWITCH, SIGNIN, SIGNUP, SIGNOUT, DISABLEFORM } from '../constants/index'; 
 
 const initialState = {
     toggle: false,
     signIn: false,
     signUp: false,
+    disableForm: false,
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -25,6 +26,10 @@ const rootReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 signIn: false,
                 signUp: false,
+            })
+        case DISABLEFORM:
+            return Object.assign({}, state, {
+                disableForm: !state.disableForm
             })
         default:
             return state;
