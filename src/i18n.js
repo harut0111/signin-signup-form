@@ -14,9 +14,6 @@ i18n
     fallbackLng: 'en',
     debug: false,
     whitelist: availableLanguages,
-    backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json'
-    },
 
     interpolation: {
       escapeValue: false, 
