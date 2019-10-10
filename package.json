@@ -1,7 +1,10 @@
 {
-  "name": "signin-signup",
+  "name": "@harut0111/signin-signup",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "url": "git://github.com/harut0111/signin-signup.git"
+  },
   "dependencies": {
     "antd": "^3.23.6",
     "i18next": "^17.0.18",
